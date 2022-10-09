@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="/js/main.js"></script>
+    <style>
+      #mainform {
+        width : 300px;
+        height:200px;
+        border-style: solid;
+        border-width : 3px;
+        border-color:rgb(0,0,255);
+        left: 40%;
+        top:5%;
+        position: absolute;
+        border-radius: 30px;
+        display: none;
+          }
+          #Login_ref {
+            margin-left: 30px;
+          }
+          #Register_ref{
+            margin-left: 80px;
+          }
+          .choosed{
+            font-weight: bold;
+          }
+          #fields{
+            margin-left:30px;
+            margin-top: 30px;
+          }
+          imput {
+            padding: 10px;
+          }
+          input[type="submit"]{
+            background-color: rgb(100,120,100);
+            border-radius: 10px;
+          }
+          input[type="text"]{
+            background-color: rgb(22,204,140)
+            border-radius: 10px;
+          }
+
+      </style>
+  </head>
+
+    <body onload="init()">
+      <div id="mainform" >
+        <a id='Login_ref' class="choosed" href="#">Login</a>
+        <a id='Register_ref' href="#">Register</a>
+        <div id="LoginDiv">
+
+          <div id='fields'>
+            <input id="usr" type=text placeholder="Username"/>
+            <input id="pwd" type=password placeholder="Password"/>
+            <input type=submit value="Login" id="submit_login">
+            <span id='status'></span>
+          </div>
+
+        </div>
+      </div>
+      <div id="workform">
+        <h1>Converter of video to gif</h1>
+        <a href="/api/logout">Logout</a>
+        <form action="/api/convert" method="POST" enctype="multipart/form-data" id="sendform">
+          <input type="file" name="userfile" id="userfile"/>
+          <input type="text" name="start" placeholder="start" id="userstart"/>
+          <input type="text" name="duration" placeholder="duration" id="userdur"/>
+          <input type="submit" id="sendfile"/>
+        </form>
+        <span id="status_mes"></span>
+      </div>
+      <table id='results'>
+
+      </table>
+    </body>
+
+</html>

@@ -1,0 +1,8 @@
+version: "2.1"
+services:
+  gif_service:
+    build: .
+    ports:
+      - "8222:8222"
+    volumes:
+      - ./service:/home/service
